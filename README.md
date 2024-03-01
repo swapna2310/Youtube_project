@@ -1,36 +1,44 @@
-**YouTube Data Harvesting and Warehousing project**
+# YouTube Data Harvesting and Warehousing
 
-**Problem Statement**
-     YouTube Data Harvesting and Warehousing is a project aimed at developing a user-friendly Streamlit application that leverages the power of the Google API to extract valuable   
-     information from YouTube channels. The extracted data is then stored in a MongoDB database and allow users to collect data from up to 10 different channels. Subsequently migrated 
-     to a SQL data warehouse, and made accessible for analysis and exploration within the Streamlit app.
+## Overview
 
-Key Technologies and Skills:
-    * Python
-    * MySQL
-    * MongoDB
-    * Google Client Library
-    * Streamlit
+YouTube Data Harvesting and Warehousing is a project designed to extract valuable information from YouTube channels using the Google API. The extracted data is stored in a MongoDB database and later migrated to a SQL data warehouse for analysis and exploration. The project includes a user-friendly Streamlit application for easy interaction.
 
-Installation
+## Key Features
 
-To run this project, you need to install the following packages:
+- Streamlit application for user interaction
+- Google API for YouTube data extraction
+- MongoDB for initial data storage
+- MySQL for SQL data warehouse
+- Data visualization using Streamlit
 
-pip install google-api-python-client
-pip install pymongo
-pip install pandas
-pip install mysql.connector
-pip install streamlit    
+## Installation
 
-Approach
-1.Start by setting up a Streamlit application using the python library "streamlit", which provides an easy-to-use interface for users to enter a YouTube channel ID, view channel     
-  details, and select channels to migrate.
-2.Establish a connection to the YouTube API V3, which allows me to retrieve channel and video data by utilizing the Google API client library for Python.
-3.Store the retrieved data in a MongoDB data lake, as MongoDB is a suitable choice for handling unstructured and semi-structured data. This is done by firstly writing a method to 
-  retrieve the previously called api call and storing the same data in the database in 3 different collections.
-4.Transferring the collected data from multiple channels namely the channels,videos and comments to a SQL data warehouse, utilizing a SQL database like MySQL for this 
-  purpose.
-5.Utilize SQL queries to join tables within the SQL data warehouse and retrieve specific channel data based on user input. For that the SQL table previously made has to be properly 
-  given the the foreign and the primary key.
-6.The retrieved data is displayed within the Streamlit application, leveraging Streamlit's data visualization capabilities to create charts and graphs for users to analyze the data.
-  YouTube-Data-Harvesting-
+To run this project, install the required packages:
+
+```bash
+pip install google-api-python-client pymongo pandas mysql-connector-python streamlit
+
+Getting Started
+1.Set up the Streamlit application using the provided Python library.
+2.Connect to the YouTube API V3 using the Google API client library.
+3.Store extracted data in a MongoDB data lake.
+4.Migrate data to a MySQL data warehouse for analysis.
+5.Utilize SQL queries for data exploration and user-specific retrievals.
+6.Display results using Streamlit's data visualization capabilities.
+
+**Run the Streamlit application:**
+streamlit run app.py
+Enter YouTube channel IDs, view details, and select channels for migration.
+
+Explore the data within the Streamlit application with visualizations.
+
+**Project Structure**
+YouTube-Data-Harvesting-/
+│
+├── app.py                # Main Streamlit application
+├── data_processing.py    # Data processing scripts
+├── youtube_api.py        # YouTube API interaction
+├── mongo_handler.py      # MongoDB data storage
+├── sql_handler.py        # SQL data warehouse migration
+└── requirements.txt      # List of required packages
