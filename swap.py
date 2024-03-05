@@ -353,6 +353,7 @@ def video_table(df_video,connection,cursor):
         
 import iso8601
 import datetime
+from datetime import datetime
 def comment_table(df_comment,connection,cursor):
     config = {
         'user':'root', 'password':'1234',
@@ -407,11 +408,7 @@ def tables(df_channel, df_video, df_playlist, df_comment):
     existing_tables = cursor.fetchall()       #fetch all the rows of a query result as a list of tuples
 
     table_names_to_check = ['channels', 'playlists', 'videos', 'comments']
-    # if all(table_name in [table[0] for table in existing_tables] for table_name in table_names_to_check): # Check if each specified table exists
-    #     cursor.close()
-    #     connection.close()
-    #     return "Data already exists"
-
+    
     channel_table(df_channel,connection,cursor)
     playlist_table(df_playlist,connection,cursor)
     video_table(df_video,connection,cursor)
